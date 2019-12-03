@@ -11,8 +11,17 @@
 # Assume your user is a developer — e.g. you don't need to write a user interface.
 
 def pig_latin(word)
-
+    first_letter = word[0].downcase
+    if ["a", "e", "i", "o", "u"].include?(first_letter)
+        "#{word}way"
+    else
+    consonants = []
+    consonants << word[0]
+    "#{word[consonants.length..-1] + consonants.join + "ay"}"
+        # piglatinize word that starts with a consonant
+    end
 end
+pig_latin("dog")
 
 ## Tests:
 
